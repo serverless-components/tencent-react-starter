@@ -5,7 +5,7 @@ author: "Tencent Cloud, Inc."
 description: Deploys a serverless React website on Tencent Cloud
 keywords: tencent cloud, serverless, website, frontend, vue
 repo: https://github.com/serverless-components/tencent-react-starter
-readme: https://github.com/serverless-components/tencent-react-starter/blob/master/readme.md
+readme: https://github.com/serverless-components/tencent-react-starter/master/README.md
 license: MIT
 
 src:

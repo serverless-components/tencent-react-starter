@@ -22,14 +22,14 @@ $ npm update -g serverless
 
 ### 配置
 
-1. 新建一个本地文件夹，使用 `sls init` 命令，下载相关 template：
+1. 新建一个本地文件夹，使用 `sls init` 命令，`--name`后面可以执行指定名称, 下载相关 template：
 
 ```bash
-$ serverless init -t vue-starter
+$ serverless init -t react-starter --name name
 ```
 
-2. 在项目模板中新建 `.env`，并在其中配置对应的腾
-   讯云 SecretId 和 SecretKey 信息：
+2. 在项目模板根目录中新建 `.env`，并在其中配置对应的腾
+   讯云 SecretId 和 SecretKey 信息， 或者在执行`sls deploy` 并扫码之后系统自动在根目录生成`.env`文件：
 
 ```text
 # .env
@@ -69,4 +69,19 @@ $ sls deploy --all
 
 ```bash
 $ sls remove --all
+
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+
+### Compiles and minifies for production
+```
+npm run build
 ```

@@ -16,7 +16,7 @@ const instanceYaml = {
   stage: 'dev',
   inputs: {
     region: 'ap-guangzhou',
-    runtime: 'Nodejs8.9',
+    runtime: 'Nodejs10.15',
     apigatewayConf: { environment: 'test' },
   },
 }

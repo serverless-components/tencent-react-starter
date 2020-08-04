@@ -1,5 +1,6 @@
 name: react-starter
 component: website
+version: 0.0.1
 org: "Tencent Cloud, Inc."
 author: "Tencent Cloud, Inc."
 description: Deploys a serverless React website on Tencent Cloud

@@ -10,11 +10,11 @@ jest.setTimeout(600000)
 const instanceYaml = {
   org: 'orgDemo',
   app: 'appDemo',
-  component: 'react-starter',
-  version: '0.0.1',
+  component: 'website',
   name: `react-integration-tests-${generateId()}`,
   stage: 'dev',
   inputs: {
+    src: path.resolve(__dirname, './src/'),
     region: 'ap-guangzhou',
     runtime: 'Nodejs10.15',
     apigatewayConf: { environment: 'test' },
@@ -27,23 +27,16 @@ const credentials = getCredentials()
 const sdk = getServerlessSdk(instanceYaml.org)
 it('should successfully deploy react app', async () => {
   const instance = await sdk.deploy(instanceYaml, credentials)
-  console.log(instanceYaml, credentials, instance)
   expect(instance).toBeDefined()
   expect(instance.instanceName).toEqual(instanceYaml.name)
   // get src from template by default
-  expect(instance.outputs.templateUrl).toBeDefined()
+  expect(instance.outputs.website).toBeDefined()
   expect(instance.outputs.region).toEqual(instanceYaml.inputs.region)
-  expect(instance.outputs.apigw).toBeDefined()
-  expect(instance.outputs.apigw.environment).toEqual(
-    instanceYaml.inputs.apigatewayConf.environment,
-  )
-  expect(instance.outputs.scf).toBeDefined()
-  expect(instance.outputs.scf.runtime).toEqual(instanceYaml.inputs.runtime)
 
   const response = await axios.get(instance.outputs.website)
   expect(
     response.data.includes(
-      'a website built on serverless components via the serverless framework',
+      'a website built on serverless components and React via the serverless framework',
     ),
   ).toBeTruthy()
 })
@@ -56,6 +49,5 @@ it('should successfully remove react app', async () => {
     instanceYaml.app,
     instanceYaml.name,
   )
-
   expect(result.instance.instanceStatus).toEqual('inactive')
 })

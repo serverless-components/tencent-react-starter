@@ -1,29 +1,10 @@
-import React, { Component } from 'react';
-import imageHero from './images/hero.png';
+import React, { Component } from 'react'
+import imageHero from './images/hero.png'
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
-    this.state = {};
-    this.state.loading = false;
-    this.state.votes = 0;
-    this.saveVote = this.saveVote.bind(this);
+    super(props)
   }
-
-  /**
-   * Component Did Mount
-   */
-
-  async componentDidMount() {}
-
-  /**
-   * Save Vote
-   */
-
-  async saveVote() {
-    this.setState({ votes: this.state.votes + 1 });
-  }
-
   /**
    * Render
    */
@@ -36,23 +17,10 @@ export default class App extends Component {
         </div>
 
         <div className="tagline">
-          a website built on serverless components via the serverless framework
-        </div>
-
-        <div className="buttonContainer">
-          <div
-            className={`button`}
-            onClick={() => {
-              this.saveVote();
-            }}
-          >
-            <div className={`buttonInner`}>
-              <div className={`buttonLeft`}>ß</div>
-              <div className="buttonRight">{this.state.votes}</div>
-            </div>
-          </div>
+          a website built on serverless components and React via the serverless
+          framework
         </div>
       </div>
-    );
+    )
   }
 }

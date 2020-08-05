@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "tencent-react-starter",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
     "start": "parcel index.html",
@@ -29,9 +29,7 @@
     "parcel-plugin-clean-dist": "0.0.6"
   },
   "babel": {
-    "presets": [
-      "nano-react-app"
-    ],
+    "presets": ["nano-react-app"],
     "plugins": [
       [
         "@babel/plugin-transform-react-jsx",

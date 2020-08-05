@@ -1,14 +1,14 @@
 name: react-starter
 component: website
-version: 0.0.1
+version: 0.0.3
+type: template
 org: "Tencent Cloud, Inc."
 author: "Tencent Cloud, Inc."
 description: Deploys a serverless React website on Tencent Cloud
-keywords: tencent cloud, serverless, website, frontend, vue
+keywords: tencent cloud, serverless, website, frontend, react
 repo: https://github.com/serverless-components/tencent-react-starter
 readme: https://github.com/serverless-components/tencent-react-starter/master/README.md
 license: MIT
-
 
 inputs:
   src:

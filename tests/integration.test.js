@@ -26,9 +26,8 @@ const credentials = getCredentials()
 
 const sdk = getServerlessSdk(instanceYaml.org)
 it('should successfully deploy react app', async () => {
-  const credentials = getCredentials()
   const instance = await sdk.deploy(instanceYaml, credentials)
-
+  console.log(instanceYaml, credentials, instance)
   expect(instance).toBeDefined()
   expect(instance.instanceName).toEqual(instanceYaml.name)
   // get src from template by default

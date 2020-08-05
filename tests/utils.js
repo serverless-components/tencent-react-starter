@@ -12,6 +12,7 @@ const generateId = () => Math.random().toString(36).substring(6)
  */
 const getServerlessSdk = (orgName) => {
   const sdk = new ServerlessSDK({
+    skipRoleBinding: true,
     context: {
       orgName,
     },

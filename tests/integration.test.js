@@ -1,5 +1,4 @@
-const { generateId, getServerlessSdk, getCredentials } = require('./utils')
-const execSync = require('child_process').execSync
+const { getYamlConfig,  generateId, getServerlessSdk, getCredentials } = require('./utils')
 const path = require('path')
 const axios = require('axios')
 
@@ -7,31 +6,12 @@ const axios = require('axios')
 jest.setTimeout(600000)
 
 // the yaml file we're testing against
-const instanceYaml = {
-  org: 'orgDemo',
-  app: 'appDemo',
-  component: 'website',
-  name: `react-integration-tests-${generateId()}`,
-  stage: 'dev',
-  inputs: {
-    src: {
-      src: path.resolve(__dirname, '../src/'),
-      hook: 'npm run build',
-      dist: path.resolve(__dirname, '../dist/'),
-    },
-    region: 'ap-guangzhou',
-    runtime: 'Nodejs10.15',
-    apigatewayConf: { environment: 'test' },
-  },
-  src: {
-    src: path.resolve(__dirname, '../'),
-  },
-}
-
+const instanceYaml = getYamlConfig(path.resolve(__dirname, '../src/serverless.yml'))
 // get aws credentials from env
 const credentials = getCredentials()
 
-const sdk = getServerlessSdk(instanceYaml.org)
+const sdk = getServerlessSdk()
+
 it('should successfully deploy react app', async () => {
   const instance = await sdk.deploy(instanceYaml, credentials)
   expect(instance).toBeDefined()

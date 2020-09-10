@@ -1,42 +1,30 @@
 {
   "name": "tencent-react-starter",
-  "version": "0.0.2",
-  "description": "",
+  "version": "1.0.0",
+  "description": "react website template",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "start": "parcel index.html",
-    "test": "jest ./tests/integration.test.js --testEnvironment node",
-    "build": "parcel build index.html"
+    "test": "jest ./tests/integration.test.js --testEnvironment node"
   },
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-chartjs-2": "^2.7.6",
-    "react-dom": "^16.5.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serverless-components/tencent-react-starter.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serverless-components/tencent-react-starter/issues"
+  },
+  "homepage": "https://github.com/serverless-components/tencent-react-starter#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/runtime": "^7.6.3",
-    "@serverless/platform-client-china": "^1.0.31",
-    "axios": "^0.19.2",
-    "babel-preset-nano-react-app": "^0.1.0",
-    "cssnano": "^4.1.10",
+    "@serverless/platform-client-china": "^1.0.37",
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "jest": "^26.2.2",
-    "parcel-bundler": "^1.11.0",
-    "parcel-plugin-clean-dist": "0.0.6"
-  },
-  "babel": {
-    "presets": ["nano-react-app"],
-    "plugins": [
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "pragmaFrag": "React.Fragment"
-        }
-      ]
-    ]
+    "jest": "^26.4.2",
+    "js-yaml": "^3.14.0"
   }
 }

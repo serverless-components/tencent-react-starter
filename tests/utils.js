@@ -43,6 +43,7 @@ const getCredentials = () => {
 const getYamlConfig = (filePath) => {
   try {
     const config = yaml.safeLoad(fs.readFileSync(filePath, "utf-8"));
+    config.inputs.region = process.env.REGION
     config.inputs.src.src = path.resolve(__dirname, "../src/");
     config.inputs.src.hook = "SKIP_PREFLIGHT_CHECK=true npm run build";
     config.inputs.src.dist = path.resolve(__dirname, "../src/dist/");

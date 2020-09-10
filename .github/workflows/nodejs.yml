@@ -28,3 +28,4 @@ jobs:
         TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY}}
         TENCENT_APP_ID: ${{ secrets.TENCENT_APP_ID }}
         SERVERLESS_PLATFORM_STAGE: ${{ secrets.SERVERLESS_PLATFORM_STAGE }}
+        REGION: ${{secrets.REGION}}
